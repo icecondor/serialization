@@ -6,7 +6,7 @@ all: protoc3/bin/protoc sql
 
 sql: proto/*.proto
 	protoc3/bin/protoc --plugin=protoc-gen-sql="proto-sql/protosql" --proto_path=proto --sql_out=sql  proto/*.proto
-	sed -i 's/AUTO_INCREMENT//' sql/*.sql
+	sed -i 's/.*AUTO_INCREMENT.*//' sql/*.sql
 	sed -i "s/SET charset 'utf8';//" sql/*.sql
 
 elm: proto/*.proto

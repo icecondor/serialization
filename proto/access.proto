@@ -1,0 +1,10 @@
+syntax = "proto3";
+package icecondor;
+
+message Access {
+  string Id = 1;
+  string UserId = 2;
+  string Level = 3;
+  string Key = 4;
+  string CreatedAt = 5;
+}

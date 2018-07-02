@@ -1,0 +1,12 @@
+syntax = "proto3";
+package icecondor;
+
+message Location {
+  string Id = 1;
+  string UserId = 2;
+  string Latitude = 3;
+  string Longitude = 4;
+  string Date = 5;
+  string Accuracy = 6;
+  string Provider = 7;
+}
