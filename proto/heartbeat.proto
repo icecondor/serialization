@@ -1,7 +1,7 @@
 syntax = "proto3";
 package icecondor;
 
-message Hertbeat {
+message Heartbeat {
   string Id = 1;
   string CreatedAt = 2;
   string UserId = 3;

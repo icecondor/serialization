@@ -2,4 +2,7 @@
 /proto-sql/
 /protoc3/
 /sql/
+/js/
+/ts/
+/node_modules/
 
