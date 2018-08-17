@@ -4,9 +4,11 @@ package icecondor;
 message Location {
   string Id = 1;
   string UserId = 2;
-  string Latitude = 3;
-  string Longitude = 4;
-  string Date = 5;
-  string Accuracy = 6;
-  string Provider = 7;
+  string DeviceId = 3;
+  float Latitude = 4;
+  float Longitude = 5;
+  string Date = 6;
+  float Accuracy = 7;
+  string Provider = 8;
+  string CreatedAt = 9;
 }

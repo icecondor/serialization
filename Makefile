@@ -2,10 +2,16 @@
 
 PATH=/bin:/usr/bin:./bin
 
-all: protoc3/bin/protoc sql
+all: protoc3/bin/protoc proto-sql/protosql sql
+
+ts: proto/*.proto
+	protoc3/bin/protoc --plugin=protoc-gen-ts="./node_modules/.bin/protoc-gen-ts" --ts_out=ts  proto/*.proto
+
+js: proto/*.proto
+	protoc3/bin/protoc --js_out=js  proto/*.proto
 
 sql: proto/*.proto
-	protoc3/bin/protoc --plugin=protoc-gen-sql="proto-sql/protosql" --proto_path=proto --sql_out=sql  proto/*.proto
+	protoc3/bin/protoc --plugin=protoc-gen-sql="proto-sql/protosql" --sql_out=sql --proto_path=proto proto/*.proto
 	sed -i 's/.*AUTO_INCREMENT.*//' sql/*.sql
 	sed -i "s/SET charset 'utf8';//" sql/*.sql
 
@@ -33,7 +39,13 @@ copy:
 	cp -r elm/Proto ../web-elm/src/
 	cp -r go/proto ../api-go/src/cointhink
 
-protoc3/bin/protoc: 
+proto-sql/protosql:
+	git clone  https://github.com/commandus/proto-sql
+	cd proto-sql
+	./configure
+	make
+
+protoc3/bin/protoc:
 	mkdir bin
 	wget --no-clobber https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-linux-x86_64.zip
 	unzip -o protoc-3.3.0-linux-x86_64.zip -d protoc3

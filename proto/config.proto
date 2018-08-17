@@ -1,0 +1,16 @@
+syntax = "proto3";
+package icecondor;
+
+message Config {
+  string Id = 1;
+  string CreatedAt = 2;
+  string UserId = 3;
+  string DeviceId = 4;
+
+  //"source":"GPS: false Cell:false Wifi:true"
+  string Source = 5;
+  //,"frequency":"10"}
+  int32 RecordingFrequency = 6;
+  //"recording":"on" / "off"
+  bool Recording = 7;
+}

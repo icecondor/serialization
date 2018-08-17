@@ -1,0 +1,15 @@
+syntax = "proto3";
+package icecondor;
+
+message Hertbeat {
+  string Id = 1;
+  string CreatedAt = 2;
+  string UserId = 3;
+  string DeviceId = 4;
+  bool Charging = 5;
+  int32 BatteryPercentage = 6;
+  bool CellData = 7;
+  bool WifiData = 8;
+  uint64 MemoryFree = 9;
+  uint64 MemoryTotal = 10;
+}
