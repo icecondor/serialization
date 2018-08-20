@@ -2,11 +2,11 @@ syntax = "proto3";
 package icecondor;
 
 message Device {
-  string Id = 1;
-  string UserId = 2;
-  string Name = 3;
-  string Make = 4;
-  string Model = 5;
+  string id = 1;
+  string user_id = 2;
+  string name = 3;
+  string make = 4;
+  string model = 5;
   float vdop = 6;
   float hdop = 7;
   float batterylife = 8;

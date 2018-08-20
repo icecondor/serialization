@@ -2,10 +2,10 @@ syntax = "proto3";
 package icecondor;
 
 message User {
-  string Id = 1;
-  string Email = 2;
-  string Username = 3;
-  string CreatedAt = 4;
-  string TimeZone = 5;
-  string Paid = 6;
+  string id = 1;
+  string email = 2;
+  string username = 3;
+  string created_at = 4;
+  string time_zone = 5;
+  string paid = 6;
 }

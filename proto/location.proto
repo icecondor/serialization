@@ -2,13 +2,13 @@ syntax = "proto3";
 package icecondor;
 
 message Location {
-  string Id = 1;
-  string UserId = 2;
-  string DeviceId = 3;
-  float Latitude = 4;
-  float Longitude = 5;
-  string Date = 6;
-  float Accuracy = 7;
-  string Provider = 8;
-  string CreatedAt = 9;
+  string id = 1 ;
+  string user_id = 2;
+  string device_id = 3;
+  float latitude = 4;
+  float longitude = 5;
+  string date = 6;
+  float accuracy = 7;
+  string provider = 8;
+  string created_at = 9;
 }

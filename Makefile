@@ -2,12 +2,10 @@
 
 PATH=/bin:/usr/bin:./bin
 
-all: protoc3/bin/protoc proto-sql/protosql sql
+all: protoc3/bin/protoc proto-sql/protosql sql ts
 
 ts: proto/*.proto
 	./node_modules/.bin/gulp
-	sed -i 's/.*namespace.*//' ts/*.ts
-	sed -i 's/^}//' ts/*.ts
 #	protoc3/bin/protoc --plugin=protoc-gen-ts="./node_modules/.bin/protoc-gen-ts" --ts_out=ts  proto/*.proto
 
 js: proto/*.proto

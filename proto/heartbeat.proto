@@ -2,14 +2,14 @@ syntax = "proto3";
 package icecondor;
 
 message Heartbeat {
-  string Id = 1;
-  string CreatedAt = 2;
-  string UserId = 3;
-  string DeviceId = 4;
-  bool Charging = 5;
-  int32 BatteryPercentage = 6;
-  bool CellData = 7;
-  bool WifiData = 8;
-  uint64 MemoryFree = 9;
-  uint64 MemoryTotal = 10;
+  string id = 1;
+  string created_at = 2;
+  string user_id = 3;
+  string device_id = 4;
+  bool charging = 5;
+  int32 battery_percentage = 6;
+  bool cell_data = 7;
+  bool wifi_data = 8;
+  uint64 memory_free = 9;
+  uint64 memory_total = 10;
 }

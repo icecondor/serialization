@@ -2,8 +2,8 @@ syntax = "proto3";
 package icecondor;
 
 message Friendship {
-  string Id = 1;
-  string UserId = 2;
-  string Friend_UserId = 3;
-  string CreatedAt = 4;
+  string id = 1;
+  string user_id = 2;
+  string friend_user_id = 3;
+  string created_at = 4;
 }
