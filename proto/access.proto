@@ -3,8 +3,8 @@ package icecondor;
 
 message Access {
   string id = 1;
-  string userId = 2;
-  string level = 3;
-  string key = 4;
-  string created_at = 5;
+  string created_at = 2;
+  string userId = 3;
+  string level = 4;
+  string key = 5;
 }
