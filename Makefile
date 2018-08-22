@@ -1,12 +1,15 @@
-.PHONY: elm crystal go ocaml copy python
+.PHONY: elm crystal go ocaml copy python npm ts
 
 PATH=/bin:/usr/bin:./bin
 
-all: protoc3/bin/protoc proto-sql/protosql sql ts
+all: protoc3/bin/protoc proto-sql/protosql sql npm ts
 
 ts: proto/*.proto
 	./node_modules/.bin/gulp
 #	protoc3/bin/protoc --plugin=protoc-gen-ts="./node_modules/.bin/protoc-gen-ts" --ts_out=ts  proto/*.proto
+
+npm: node_modules/.bin/gulp
+	npm install gulp gulp-cli protobuf-templates
 
 js: proto/*.proto
 	protoc3/bin/protoc --js_out=js  proto/*.proto

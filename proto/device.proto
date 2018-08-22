@@ -9,5 +9,5 @@ message Device {
   string model = 5;
   float vdop = 6;
   float hdop = 7;
-  float batterylife = 8;
+  float battery_life = 8;
 }
