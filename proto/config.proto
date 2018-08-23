@@ -4,13 +4,14 @@ package icecondor;
 message Config {
   string id = 1;
   string created_at = 2;
-  string user_id = 3;
-  string device_id = 4;
+  string received_at = 3;
+  string user_id = 4;
+  string device_id = 5;
 
   //"source":"GPS: false Cell:false Wifi:true"
-  string source = 5;
+  string source = 6;
   //,"frequency":"10"}
-  int32 recording_frequency = 6;
+  int32 recording_frequency = 7;
   //"recording":"on" / "off"
-  bool recording = 7;
+  bool recording = 8;
 }

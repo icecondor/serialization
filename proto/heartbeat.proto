@@ -4,12 +4,13 @@ package icecondor;
 message Heartbeat {
   string id = 1;
   string created_at = 2;
-  string user_id = 3;
-  string device_id = 4;
-  bool charging = 5;
-  int32 battery_percentage = 6;
-  bool cell_data = 7;
-  bool wifi_data = 8;
-  uint64 memory_free = 9;
-  uint64 memory_total = 10;
+  string received_at = 3;
+  string user_id = 4;
+  string device_id = 5;
+  bool charging = 6;
+  int32 battery_percentage = 7;
+  bool cell_data = 8;
+  bool wifi_data = 9;
+  uint64 memory_free = 10;
+  uint64 memory_total = 11;
 }

@@ -3,12 +3,13 @@ package icecondor;
 
 message Location {
   string id = 1 ;
-  string user_id = 2;
-  string device_id = 3;
-  float latitude = 4;
-  float longitude = 5;
-  string date = 6;
-  float accuracy = 7;
-  string provider = 8;
-  string created_at = 9;
+  string created_at = 2;
+  string received_at = 3;
+  string user_id = 4;
+  string device_id = 5;
+  float latitude = 6;
+  float longitude = 7;
+  string date = 8;
+  float accuracy = 9;
+  string provider = 10;
 }
