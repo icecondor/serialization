@@ -44,23 +44,17 @@ copy:
 	cp -r elm/Proto ../web-elm/src/
 	cp -r go/proto ../api-go/src/cointhink
 
-proto-sql/protosql:
+proto-sql: 
 	git clone  https://github.com/commandus/proto-sql
-	cd proto-sql
-	./configure
-	make
+
+proto-sql/protosql: proto-sql
+	cd proto-sql && ./configure && make
 
 protoc3/bin/protoc:
 	mkdir bin
 	wget --no-clobber https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-linux-x86_64.zip
 	unzip -o protoc-3.3.0-linux-x86_64.zip -d protoc3
 	rm protoc-3.3.0-linux-x86_64.zip
-
-bin/protosql:
-	#libprotobuf-dev libprotoc-dev
-	git clone https://github.com/commandus/proto-sql
-	cd proto-sql && ./configure && make
-	cp proto-sql/protosql bin/
 
 bin/protoc-gen-elm:
 	GOPATH=`pwd` go get -u github.com/tiziano88/elm-protobuf/protoc-gen-elm
