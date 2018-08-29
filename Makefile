@@ -2,7 +2,7 @@
 
 PATH=/bin:/usr/bin:./bin
 
-all: protoc3/bin/protoc proto-sql/protosql sql ts
+all: protoc3/bin/protoc proto-sql/protosql sql npm ts
 
 ts: proto/*.proto
 	./node_modules/.bin/gulp
@@ -12,9 +12,11 @@ npm: node_modules/.bin/gulp
 	npm install gulp gulp-cli protobuf-templates
 
 js: proto/*.proto
+	mkdir -p js
 	protoc3/bin/protoc --js_out=js  proto/*.proto
 
 sql: proto/*.proto
+	mkdir -p sql
 	protoc3/bin/protoc --plugin=protoc-gen-sql="proto-sql/protosql" --sql_out=sql --proto_path=proto proto/*.proto
 	sed -i 's/.*AUTO_INCREMENT.*//' sql/*.sql
 	sed -i "s/SET charset 'utf8';//" sql/*.sql
@@ -44,7 +46,7 @@ copy:
 	cp -r elm/Proto ../web-elm/src/
 	cp -r go/proto ../api-go/src/cointhink
 
-proto-sql: 
+proto-sql:
 	git clone  https://github.com/commandus/proto-sql
 
 proto-sql/protosql: proto-sql
