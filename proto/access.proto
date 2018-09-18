@@ -4,7 +4,8 @@ package icecondor;
 message Access {
   string id = 1;
   string created_at = 2;
-  string user_id = 3;
-  string level = 4;
-  string key = 5;
+  string expires_at = 3;
+  string user_id = 4;
+  string level = 5;
+  string key = 6;
 }
