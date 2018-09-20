@@ -1,0 +1,10 @@
+syntax = "proto3";
+package icecondor;
+
+message Rule {
+  string id = 1;
+  string created_at = 2;
+  string user_id = 3;
+  string fence_id = 4;
+  string kind = 5;
+}
