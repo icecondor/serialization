@@ -12,4 +12,9 @@ message Device {
   float vdop = 8;
   float hdop = 9;
   float battery_life = 10;
+  string os_name = 11;
+  string os_version = 12;
+  string app_name = 13;
+  string app_version = 14;
+  bool archived = 15;
 }
