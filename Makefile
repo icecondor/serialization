@@ -17,7 +17,7 @@ js: proto/*.proto
 
 sql: proto/*.proto
 	mkdir -p sql
-	protoc3/bin/protoc --plugin=protoc-gen-sql="proto-sql/protosql" --sql_out=sql --proto_path=proto proto/*.proto
+	LD_LIBRARY_PATH=protobuf-3.3.0/src/.libs/ protoc3/bin/protoc --plugin=protoc-gen-sql="proto-sql/protosql" --sql_out=sql --proto_path=proto proto/*.proto
 	sed -i 's/.*AUTO_INCREMENT.*//' sql/*.sql
 	sed -i "s/SET charset 'utf8';//" sql/*.sql
 	sed -i 's/`id` text/`id` text primary key/' sql/*.sql
@@ -50,7 +50,7 @@ proto-sql:
 	git clone  https://github.com/commandus/proto-sql
 
 proto-sql/protosql: proto-sql
-	cd proto-sql && ./configure && make
+	cd proto-sql && ./configure LDFLAGS=-Lprotobuf-3.3.0/src/.libs/ && make 
 
 protoc3/bin/protoc:
 	mkdir bin
