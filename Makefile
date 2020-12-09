@@ -2,7 +2,7 @@
 
 PATH=/bin:/usr/bin:./bin
 
-all: protoc3/bin/protoc proto-sql/protosql sql node_modules/.bin/gulp ts
+all: protoc3/bin/protoc node_modules/.bin/gulp ts
 
 ts: proto/*.proto
 	./node_modules/.bin/gulp
