@@ -1,0 +1,6 @@
+for a in proto/*.proto
+do
+NAME=`basename $a .proto`
+echo converting $a to js/$NAME.js
+./node_modules/.bin/pbjs -t static-module $a > js/$NAME.js
+done

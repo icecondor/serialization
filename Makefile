@@ -2,7 +2,7 @@
 
 PATH=/bin:/usr/bin:./bin
 
-all: protoc3/bin/protoc node_modules/.bin/gulp ts
+all: protoc3/bin/protoc js ts
 
 ts: proto/*.proto
 	./node_modules/.bin/gulp
@@ -13,7 +13,8 @@ node_modules/.bin/gulp:
 
 js: proto/*.proto
 	mkdir -p js
-	protoc3/bin/protoc --js_out=js  proto/*.proto
+#	protoc3/bin/protoc --js_out=js  proto/*.proto
+	./proto2js
 
 sql: proto/*.proto
 	mkdir -p sql
