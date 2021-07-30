@@ -1,0 +1,5 @@
+namespace IceCondor;
+
+table Location {
+  id: string;
+}

@@ -1,5 +1,7 @@
 .ONESHELL:
 
+all: bin ts
+
 bin: bin/flatc
 	mkdir bin
 
@@ -9,3 +11,6 @@ bin/flatc:
 	unzip Linux.flatc.binary.clang++-9.zip
 	rm Linux.flatc.binary.clang++-9.zip
 	chmod 755 flatc
+
+ts:
+	./bin/flatc --ts fbs/*.fbs
