@@ -11,10 +11,10 @@ ts: proto/*.proto
 node_modules/.bin/gulp:
 	npm install gulp gulp-cli protobuf-templates
 
-js: proto/*.proto
+ic_nouns.js: proto/*.proto
 	mkdir -p js
 #	protoc3/bin/protoc --js_out=js  proto/*.proto
-	./proto2js
+	./node_modules/.bin/pbjs -t static-module proto/*.proto -o ic_nouns.js
 
 sql: proto/*.proto
 	mkdir -p sql
