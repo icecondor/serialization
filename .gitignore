@@ -6,3 +6,5 @@ protobuf/js/
 protobuf/ts/
 protobuf/node_modules/
 protobuf/package-lock.json
+
+flatbuffers/bin/
