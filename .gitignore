@@ -1,8 +1,8 @@
-/bin/
-/proto-sql/
-/protoc3/
-/sql/
-/js/
-/ts/
-/node_modules/
-package-lock.json
+protobuf/bin/
+protobuf/proto-sql/
+protobuf/protoc3/
+protobuf/sql/
+protobuf/js/
+protobuf/ts/
+protobuf/node_modules/
+protobuf/package-lock.json
