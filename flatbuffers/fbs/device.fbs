@@ -1,0 +1,22 @@
+// Generated from device.proto
+
+namespace icecondor;
+
+table Device {
+  id:string;
+  created_at:string;
+  user_id:string;
+  device_id:string;
+  name:string;
+  make:string;
+  model:string;
+  vdop:float;
+  hdop:float;
+  battery_life:float;
+  os_name:string;
+  os_version:string;
+  app_name:string;
+  app_version:string;
+  archived:bool;
+}
+

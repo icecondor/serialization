@@ -1,0 +1,13 @@
+// Generated from user.proto
+
+namespace icecondor;
+
+table User {
+  id:string;
+  created_at:string;
+  email:string;
+  username:string;
+  time_zone:string;
+  paid:string;
+}
+

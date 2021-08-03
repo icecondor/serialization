@@ -1,0 +1,18 @@
+// Generated from heartbeat.proto
+
+namespace icecondor;
+
+table Heartbeat {
+  id:string;
+  date:string;
+  received_at:string;
+  user_id:string;
+  device_id:string;
+  charging:bool;
+  battery_percentage:int;
+  cell_data:bool;
+  wifi_data:bool;
+  memory_free:ulong;
+  memory_total:ulong;
+}
+

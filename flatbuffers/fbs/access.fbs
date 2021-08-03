@@ -1,0 +1,13 @@
+// Generated from access.proto
+
+namespace icecondor;
+
+table Access {
+  id:string;
+  created_at:string;
+  expires_at:string;
+  user_id:string;
+  level:string;
+  key:string;
+}
+
