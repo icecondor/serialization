@@ -8,4 +8,4 @@ protobuf/node_modules/
 protobuf/package-lock.json
 
 flatbuffers/bin/
-flatbuffers/ice-condor/
+flatbuffers/icecondor/
