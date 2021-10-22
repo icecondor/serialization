@@ -1,0 +1,13 @@
+{
+  "name": "icecondor-serialization",
+  "version": "0.1.0",
+  "description": "protobuf code gen",
+  "license": "AGPL-1.0-or-later",
+  "engines": {
+    "node": ">=14.16"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "protobuf-templates": "^1.0.6"
+  }
+}

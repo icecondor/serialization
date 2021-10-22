@@ -2,7 +2,7 @@
 
 PATH=/bin:/usr/bin:./bin
 
-all: protoc3/bin/protoc js ts
+all: protoc3/bin/protoc ts
 
 ts: proto/*.proto
 	./node_modules/.bin/gulp
