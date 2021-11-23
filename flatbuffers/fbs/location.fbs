@@ -1,13 +1,11 @@
-// Generated from location.proto
-
 namespace icecondor;
 
 table Location {
-  id:string;
-  date:string;
-  received_at:string;
-  user_id:string;
-  device_id:string;
+  id:[uint8];
+  date:[uint8];
+  received_at:[uint8];
+  user_id:[uint8];
+  device_id:[uint8];
   latitude:float;
   longitude:float;
   altitude:float;
