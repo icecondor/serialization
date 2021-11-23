@@ -1,11 +1,9 @@
 .ONESHELL:
 
-all: bin ts
-
-bin: bin/flatc
-	mkdir bin
+all: bin/flatc ts
 
 bin/flatc:
+	mkdir bin
 	cd bin
 	wget https://github.com/google/flatbuffers/releases/download/v2.0.0/Linux.flatc.binary.clang++-9.zip
 	unzip Linux.flatc.binary.clang++-9.zip
