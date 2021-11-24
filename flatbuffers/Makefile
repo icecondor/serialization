@@ -11,4 +11,4 @@ bin/flatc:
 	chmod 755 flatc
 
 ts:
-	./bin/flatc --ts fbs/*.fbs
+	./bin/flatc --ts --gen-object-api fbs/*.fbs

@@ -2,8 +2,8 @@ namespace icecondor;
 
 table Location {
   id:[uint8];
-  date:[uint8];
-  received_at:[uint8];
+  date:uint64;
+  received_at:uint64;
   user_id:[uint8];
   device_id:[uint8];
   latitude:float;
