@@ -9,7 +9,7 @@ table Location {
   latitude:float;
   longitude:float;
   altitude:float;
-  accuracy:float;
-  provider:string;
+  accuracy_horizontal:float;
+  accuracy_vertical:float;
 }
 
