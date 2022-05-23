@@ -43,6 +43,10 @@ ocaml: proto/*.proto
 	mkdir -p ocaml
 	for name in $^; do ocaml-protoc -ml_out ocaml $$name; done
 
+rust: proto/*.proto
+	mkdir -p rust
+	export PATH=$$PATH:~/.cargo/bin; protoc3/bin/protoc --rust_out rust $^
+
 copy:
 	cp -r elm/Proto ../web-elm/src/
 	cp -r go/proto ../api-go/src/cointhink
@@ -55,9 +59,9 @@ proto-sql/protosql: proto-sql
 
 protoc3/bin/protoc:
 	mkdir bin
-	wget --no-clobber https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-linux-x86_64.zip
-	unzip -o protoc-3.3.0-linux-x86_64.zip -d protoc3
-	rm protoc-3.3.0-linux-x86_64.zip
+	wget --no-clobber https://github.com/protocolbuffers/protobuf/releases/download/v3.20.1/protoc-3.20.1-linux-x86_64.zip 
+	unzip -o protoc-3.20.1-linux-x86_64.zip -d protoc3
+	rm protoc-3.20.1-linux-x86_64.zip
 
 bin/protoc-gen-elm:
 	GOPATH=`pwd` go get -u github.com/tiziano88/elm-protobuf/protoc-gen-elm
@@ -68,3 +72,6 @@ bin/protoc-gen-go:
 
 gen-ocaml:
 	opam install ocaml-protoc
+
+~/.cargo/bin/protoc-gen-rust:
+	export PATH=$$PATH:~/.cargo/bin; cargo install protobuf-codegen
