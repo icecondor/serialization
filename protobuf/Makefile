@@ -45,7 +45,7 @@ ocaml: proto/*.proto
 
 rust: proto/*.proto
 	mkdir -p rust
-	export PATH=$$PATH:~/.cargo/bin; protoc3/bin/protoc --rust_out rust $^
+	PATH=$$PATH:~/.cargo/bin protoc3/bin/protoc --rust_out rust $^
 	for a in $^; do sed -i 's/Debug/Debug,::serde::Serialize,::serde::Deserialize/' rust/`basename $$a .proto`.rs; done
 	for a in $^; do sed -i 's/^.*@@protoc_insertion_point.special_field.*/#[serde(skip)]/' rust/`basename $$a .proto`.rs; done
 	cp rust/* ../../api-rs/src/nouns
